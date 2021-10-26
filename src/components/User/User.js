@@ -132,7 +132,7 @@ class User extends React.Component {
                     >
                       Editar
                     </Button>{" "}
-                    <Button color="danger" onClick={() => this.eliminar(dato)}>Eliminar</Button>
+                    <Button color="dark" onClick={() => this.eliminar(dato)}>Eliminar</Button>
                   </td>
                 </tr>
               ))}
@@ -233,7 +233,7 @@ class User extends React.Component {
               Actualizar
             </Button>
             <Button
-              className="btn btn-danger"
+              className="btn btn-dark"
               onClick={() => this.cerrarModalActualizar()}
             >
               Cancelar
@@ -319,7 +319,7 @@ class User extends React.Component {
               Insertar
             </Button>
             <Button
-              className="btn btn-danger"
+              className="btn btn-dark"
               onClick={() => this.cerrarModalInsertar()}
             >
               Cancelar
