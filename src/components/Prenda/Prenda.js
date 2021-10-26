@@ -110,7 +110,7 @@ class User extends React.Component {
               />
             ) : null}
             <thead>
-              <tr>
+              <tr class="table-primary">
                 <th>Nombre del producto</th>
                 <th>Codigo</th>
                 <th>Talla</th>
@@ -122,7 +122,7 @@ class User extends React.Component {
 
             <tbody>
               {this.state.data.map((dato) => (
-                <tr key={dato._id}>
+                <tr key={dato._id} class="table-primary">
                   <td>{dato.name}</td>
                   <td>{dato.code}</td>
                   <td>{dato.description}</td>
