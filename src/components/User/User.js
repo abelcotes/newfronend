@@ -1,16 +1,7 @@
 import React from 'react';
-import {
-  Table,
-  Button,
-  Container,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  FormGroup,
-  ModalFooter,
-  Spinner
-} from "reactstrap";
-
+import {Table,Button,Container,Modal,ModalHeader,ModalBody,FormGroup,ModalFooter,Spinner} from "reactstrap";
+import NavbarComponents from '../shared/components/navbar/NavbarComponents';
+import Footer from '../shared/components/footer/Footer';
 
 const BASE_URL = process.env.REACT_APP_API_URL;
 const PATH_CUSTOMERS = 'vendedores';
@@ -101,11 +92,11 @@ class User extends React.Component {
 
     return (
       <>
+      <NavbarComponents />
         <Container>
           <h2>Tablero de vendedores</h2>
-          <a href='/prendas'>Ir a productos</a>
           <br />
-          <Button color="success" onClick={() => this.mostrarModalInsertar()}>Crear</Button>
+          <Button color="info" onClick={() => this.mostrarModalInsertar()}>Crear</Button>
           <br />
           <br />
           <Table>
@@ -335,6 +326,7 @@ class User extends React.Component {
             </Button>
           </ModalFooter>
         </Modal>
+        <Footer />
       </>
     );
   }
