@@ -1,16 +1,7 @@
 import React from 'react';
-import {
-  Table,
-  Button,
-  Container,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  FormGroup,
-  ModalFooter,
-  Spinner
-} from "reactstrap";
-
+import {Table,Button,Container,Modal,ModalHeader,ModalBody,FormGroup,ModalFooter,Spinner} from "reactstrap";
+import NavbarComponents from '../shared/components/navbar/NavbarComponents';
+import Footer from '../shared/components/footer/Footer';
 
 
 import { logout } from '../Firebase/Firebase';
@@ -116,12 +107,18 @@ class User extends React.Component {
 
     return (
       <>
+      <NavbarComponents />
         <Container>
           <h2>Tablero de vendedores</h2>
+
           <a href='/login'>Salir</a>
           <br />
           <Button color="success" onClick={() => this.mostrarModalInsertar()}>Crear</Button>
           <Button outline color="secondary" onClick={logout} block>Cerrar sesión</Button>
+
+          <br />
+          <Button color="info" onClick={() => this.mostrarModalInsertar()}>Crear</Button>
+>
           <br />
         
           <Table>
@@ -157,7 +154,7 @@ class User extends React.Component {
                     >
                       Editar
                     </Button>{" "}
-                    <Button color="danger" onClick={() => this.eliminar(dato)}>Eliminar</Button>
+                    <Button color="dark" onClick={() => this.eliminar(dato)}>Eliminar</Button>
                   </td>
                 </tr>
               ))}
@@ -258,7 +255,7 @@ class User extends React.Component {
               Actualizar
             </Button>
             <Button
-              className="btn btn-danger"
+              className="btn btn-dark"
               onClick={() => this.cerrarModalActualizar()}
             >
               Cancelar
@@ -344,13 +341,14 @@ class User extends React.Component {
               Insertar
             </Button>
             <Button
-              className="btn btn-danger"
+              className="btn btn-dark"
               onClick={() => this.cerrarModalInsertar()}
             >
               Cancelar
             </Button>
           </ModalFooter>
         </Modal>
+        <Footer />
       </>
     );
   }

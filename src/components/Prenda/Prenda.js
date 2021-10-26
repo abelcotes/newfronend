@@ -1,15 +1,8 @@
 import React from 'react';
-import {
-  Table,
-  Button,
-  Container,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  FormGroup,
-  ModalFooter,
-  Spinner
-} from "reactstrap";
+import {Table,Button,Container,Modal,ModalHeader,ModalBody,FormGroup,ModalFooter,Spinner} from "reactstrap";
+import NavbarComponents from '../shared/components/navbar/NavbarComponents';
+import Footer from '../shared/components/footer/Footer';
+import './Prenda.module.css';
 
 
 const BASE_URL = process.env.REACT_APP_API_URL;
@@ -100,12 +93,12 @@ class User extends React.Component {
   render() {
 
     return (
-      <>
+      <body> 
+      <NavbarComponents />
         <Container>
           <h2>Listado de productos</h2>
-          <a href='/users'>Ir a usuarios</a>
           <br />
-          <Button color="success" onClick={() => this.mostrarModalInsertar()}>Crear</Button>
+          <Button color="info" onClick={() => this.mostrarModalInsertar()}>Crear</Button>
           <br />
           <br />
           
@@ -142,7 +135,7 @@ class User extends React.Component {
                     >
                       Editar
                     </Button>{" "}
-                    <Button color="danger" onClick={() => this.eliminar(dato)}>Eliminar</Button>
+                    <Button color="dark" onClick={() => this.eliminar(dato)}>Eliminar</Button>
                   </td>
                 </tr>
               ))}
@@ -192,20 +185,20 @@ class User extends React.Component {
                 name="code"
                 type="text"
                 onChange={this.handleChange}
-                value={this.state.form.firstName}
+                value={this.state.form.code}
               />
             </FormGroup>
 
             <FormGroup>
               <label>
-                Talla:
+                Descripcion:
               </label>
               <input
                 className="form-control"
                 name="description"
                 type="text"
                 onChange={this.handleChange}
-                value={this.state.form.lastName}
+                value={this.state.form.description}
               />
             </FormGroup>
 
@@ -218,7 +211,7 @@ class User extends React.Component {
                 name="price"
                 type="text"
                 onChange={this.handleChange}
-                value={this.state.form.address}
+                value={this.state.form.price}
               />
             </FormGroup>
             <FormGroup>
@@ -230,7 +223,7 @@ class User extends React.Component {
                 name="state"
                 type="text"
                 onChange={this.handleChange}
-                value={this.state.form.phoneNumber}
+                value={this.state.form.state}
               />
             </FormGroup>
           </ModalBody>
@@ -243,7 +236,7 @@ class User extends React.Component {
               Actualizar
             </Button>
             <Button
-              className="btn btn-danger"
+              className="btn btn-dark"
               onClick={() => this.cerrarModalActualizar()}
             >
               Cancelar
@@ -287,7 +280,7 @@ class User extends React.Component {
 
             <FormGroup>
               <label>
-                Talla del producto:
+                Descripcion del producto:
               </label>
               <input
                 className="form-control"
@@ -329,14 +322,15 @@ class User extends React.Component {
               Insertar
             </Button>
             <Button
-              className="btn btn-danger"
+              className="btn btn-dark"
               onClick={() => this.cerrarModalInsertar()}
             >
               Cancelar
             </Button>
           </ModalFooter>
         </Modal>
-      </>
+        <Footer />
+      </body>
     );
   }
 

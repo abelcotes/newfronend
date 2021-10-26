@@ -1,22 +1,4 @@
-import './App.css';
-import {
-  BrowserRouter,
-  Switch,
-  Route
-} from "react-router-dom";
-import Prenda from './components/Prenda/Prenda';
-import User from './components/User/User';
-import Login from './components/Login/Login';
-import Register from './components/Register/Register';
 
-
-import PaginaNoEncontrada from './components/PaginaNoEncontrada/PaginaNoEncontrada';
-
-
-function App() {
-  return (
-    <BrowserRouter>
-      <Switch>
       
       <Route path="/users" exact>
           <User />
@@ -41,6 +23,7 @@ function App() {
           <Register/>
         </Route>
         
+
       </Switch>
     </BrowserRouter>
   );
