@@ -16,9 +16,9 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Prenda} />
-        <Route exact path="/prendas" component={Prenda}/>
+        <Route exact path="/producto" component={Prenda}/>
         <Route exact path="/" component={User} />
-        <Route exact path="/users" component={User}/>
+        <Route exact path="/user" component={User}/>
        
         <Route component={PaginaNoEncontrada} />
       </Switch>
