@@ -118,7 +118,7 @@ class User extends React.Component {
 
           <br />
           <Button color="info" onClick={() => this.mostrarModalInsertar()}>Crear</Button>
->
+
           <br />
         
           <Table>
