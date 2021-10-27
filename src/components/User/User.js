@@ -3,6 +3,10 @@ import {Table,Button,Container,Modal,ModalHeader,ModalBody,FormGroup,ModalFooter
 import NavbarComponents from '../shared/components/navbar/NavbarComponents';
 import Footer from '../shared/components/footer/Footer';
 
+
+import { logout } from '../Firebase/Firebase';
+import { auth } from '../Firebase/Firebase';
+
 const BASE_URL = process.env.REACT_APP_API_URL;
 const PATH_CUSTOMERS = 'vendedores';
 
@@ -88,6 +92,17 @@ class User extends React.Component {
     });
   };
 
+  logout = () => {
+    auth.signOut().then(function () {
+      // Sign-out successful.
+      console.log("loggedout");
+    }).catch((error) => {
+      // An error happened.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+    });
+  };
+
   render() {
 
     return (
@@ -95,10 +110,17 @@ class User extends React.Component {
       <NavbarComponents />
         <Container>
           <h2>Tablero de vendedores</h2>
+
+          <a href='/login'>Salir</a>
+          <br />
+          <Button color="success" onClick={() => this.mostrarModalInsertar()}>Crear</Button>
+          <Button outline color="secondary" onClick={logout} block>Cerrar sesión</Button>
+
           <br />
           <Button color="info" onClick={() => this.mostrarModalInsertar()}>Crear</Button>
+>
           <br />
-          <br />
+        
           <Table>
             {this.state.mostrarCargando ? (
               <Spinner

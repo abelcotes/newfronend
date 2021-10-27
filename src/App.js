@@ -1,29 +1,33 @@
-import './App.css';
-import {
-  BrowserRouter,
-  Switch,
-  Route
-} from "react-router-dom";
-import Prenda from './components/Prenda/Prenda';
-import User from './components/User/User';
 
+      
+      <Route path="/users" exact>
+          <User />
+         </Route>
 
-import PaginaNoEncontrada from './components/PaginaNoEncontrada/PaginaNoEncontrada';
+         <Route path="/" exact>
+          <Login />
+        </Route>
+        
+        <Route path="/login" exact>
+          <Login />
+        </Route>
 
+        <Route path="/producto" exact>
+          <Prenda />
+        </Route>
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={Prenda} />
-        <Route exact path="/producto" component={Prenda}/>
-        <Route exact path="/" component={User} />
-        <Route exact path="/user" component={User}/>
-       
-        <Route component={PaginaNoEncontrada} />
+        <Route path="/no-encontrada" exact>
+          <PaginaNoEncontrada/>
+        </Route>
+        <Route path="/register" exact>
+          <Register/>
+        </Route>
+        
+
       </Switch>
     </BrowserRouter>
   );
 }
+
 
 export default App;
