@@ -3,6 +3,9 @@ import './NavbarComponents.css';
 import { Link, link } from "react-router-dom";
 import img2 from "./favicon.png";
 
+
+
+
 function NavbarComponents() {
 
 
@@ -23,9 +26,10 @@ function NavbarComponents() {
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav me-auto mb-2 mb-lg-0">
                         <Link to="/user" className="nav-link active" aria-current="page" href="usuario.html"><i className="bi bi-person"></i> Usuarios</Link>
-                        <Link to="/vendedores" className="nav-link active" aria-current="page" href="formulario.html"><i className="bi bi-people"></i> Vendedores</Link>
+                        <Link to="/vendedores" className="nav-link active" aria-current="page" href="formulario.html"><i className="bi bi-people"></i> Ventas</Link>
                         <Link to="/producto" className="nav-link active" aria-current="page" href="producto.html"><i className="bi bi-shop-window"></i> Productos</Link>
-                        <Link to="/ventas" className="nav-link active" aria-current="page" href="lapaginavendedor.html"><i className="bi bi-file-earmark"></i> Ventas</Link>
+                        <Link to="/ventas" className="nav-link active" aria-current="page" href="lapaginavendedor.html"><i className="bi bi-file-earmark"></i> Facturas</Link>
+                        
                     </div>
 
 

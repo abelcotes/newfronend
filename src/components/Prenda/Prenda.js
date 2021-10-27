@@ -3,7 +3,8 @@ import {Table,Button,Container,Modal,ModalHeader,ModalBody,FormGroup,ModalFooter
 import NavbarComponents from '../shared/components/navbar/NavbarComponents';
 import Footer from '../shared/components/footer/Footer';
 import './Prenda.module.css';
-
+import { logout } from '../Firebase/Firebase';
+import { auth } from '../Firebase/Firebase';
 
 const BASE_URL = process.env.REACT_APP_API_URL;
 const PATH_PRODUCTS = 'productos';
@@ -90,6 +91,17 @@ class User extends React.Component {
     });
   };
 
+  logout = () => {
+    auth.signOut().then(function () {
+      // Sign-out successful.
+      console.log("loggedout");
+    }).catch((error) => {
+      // An error happened.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+    });
+  };
+
   render() {
 
     return (
@@ -98,7 +110,9 @@ class User extends React.Component {
         <Container>
           <h2>Listado de productos</h2>
           <br />
+          <a class="btn btn-primary" href="/login" role="button">Salir</a>
           <Button color="info" onClick={() => this.mostrarModalInsertar()}>Crear</Button>
+          <Button color="danger" onClick={logout} block>Cerrar sesión</Button>
           <br />
           <br />
           
@@ -110,7 +124,7 @@ class User extends React.Component {
               />
             ) : null}
             <thead>
-              <tr>
+              <tr class="table-primary">
                 <th>Nombre del producto</th>
                 <th>Codigo</th>
                 <th>Talla</th>
@@ -122,7 +136,7 @@ class User extends React.Component {
 
             <tbody>
               {this.state.data.map((dato) => (
-                <tr key={dato._id}>
+                <tr key={dato._id} class="table-primary">
                   <td>{dato.name}</td>
                   <td>{dato.code}</td>
                   <td>{dato.description}</td>

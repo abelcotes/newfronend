@@ -31,7 +31,7 @@ function Login() {
       
       return;
     }
-    if (user) { history.replace("/users"); }
+    if (user) { history.replace("/user"); }
   }, [user, loading]);
   
 

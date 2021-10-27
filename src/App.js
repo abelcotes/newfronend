@@ -8,8 +8,8 @@ import Prenda from './components/Prenda/Prenda';
 import User from './components/User/User';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
-
-
+import BuscarPage from './components/buscar/BuscarPage';
+import ModVentas from './components/modventas/ModVentasPage';
 import PaginaNoEncontrada from './components/PaginaNoEncontrada/PaginaNoEncontrada';
 
 
@@ -17,14 +17,14 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-      <Route path="/users" exact>
+        <Route path="/user" exact>
           <User />
-         </Route>
+        </Route>
 
-         <Route path="/" exact>
+        <Route path="/" exact>
           <Login />
         </Route>
-        
+
         <Route path="/login" exact>
           <Login />
         </Route>
@@ -34,12 +34,20 @@ function App() {
         </Route>
 
         <Route path="/no-encontrada" exact>
-          <PaginaNoEncontrada/>
+          <PaginaNoEncontrada />
         </Route>
         <Route path="/register" exact>
-          <Register/>
+          <Register />
         </Route>
-      
+
+        <Route path="/ventas" exact>
+          <BuscarPage />
+        </Route>
+
+        <Route path="/vendedores" exact>
+          <ModVentas />
+        </Route>
+
       </Switch>
     </BrowserRouter>
   );
