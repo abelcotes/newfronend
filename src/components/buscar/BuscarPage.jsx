@@ -10,7 +10,7 @@ function BuscarPage() {
     const [products, setProducts] = useState([]);
     const getProduct = async () => {
         try {
-            const response = await fetch("http://localhost:3001/products");
+            const response = await fetch("http://localhost:3000/productos");
             const jsonResponse = await response.json();
             const responseProducts = jsonResponse;   
             console.log(jsonResponse)         
@@ -53,7 +53,7 @@ function BuscarPage() {
                                     </div>
                                 </div>
                                 <div className="col">
-                                    <div className="p-0 flex-grow-1 "><Link to="/ventas"
+                                    <div className="p-0 flex-grow-1 "><Link to="/vendedores"
                                         className="btn btn-outline-secondary position-absolute top-0 end-0"><i className="bi bi-plus-circle"></i> Nueva Factura
                                     </Link>
 
