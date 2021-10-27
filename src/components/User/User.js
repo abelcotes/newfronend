@@ -109,14 +109,9 @@ class User extends React.Component {
       <>
       <NavbarComponents />
         <Container>
-          <h2>Tablero de vendedores</h2>
-
-          <a href='/login'>Salir</a>
-          <br />
-          <Button color="success" onClick={() => this.mostrarModalInsertar()}>Crear</Button>
-          <Button outline color="secondary" onClick={logout} block>Cerrar sesión</Button>
-
-          <br />
+          <h2>Tablero de Usuarios</h2>
+          <a class="btn btn-primary" href="/login" role="button">Salir</a>
+          
           <Button color="info" onClick={() => this.mostrarModalInsertar()}>Crear</Button>
 
           <br />
@@ -129,7 +124,7 @@ class User extends React.Component {
               />
             ) : null}
             <thead>
-              <tr>
+              <tr class="table-primary">
                 <th>Email</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
@@ -141,7 +136,7 @@ class User extends React.Component {
 
             <tbody>
               {this.state.data.map((dato) => (
-                <tr key={dato._id}>
+                <tr key={dato._id} class="table-primary">
                   <td>{dato.email}</td>
                   <td>{dato.firstName}</td>
                   <td>{dato.lastName}</td>

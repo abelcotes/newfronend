@@ -38,7 +38,7 @@ function Register() {
 
   useEffect(() => {
     if (loading) return;
-    if (user) history.replace("/Users");
+    if (user) history.replace("/User");
   }, [user, loading]);
 
   return (
